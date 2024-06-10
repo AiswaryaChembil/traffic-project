@@ -1,21 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './style.css';
 
-const TrafficLight = () => {
-    const [light, setLight] = useState('red');
-
-    useEffect(() => {
-        let timer;
-        if (light === 'red') {
-            timer = setTimeout(() => setLight('yellow'), 5000);
-        } else if (light === 'yellow') {
-            timer = setTimeout(() => setLight('green'), 2000);
-        } else if (light === 'green') {
-            timer = setTimeout(() => setLight('red'), 3000);
-        }
-
-        return () => clearTimeout(timer);
-    }, [light]);
+const TrafficLight = ({light}) => {
 
     return (
         <div className='d-flex justify-content-center'>
